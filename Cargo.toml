@@ -1,0 +1,15 @@
+[package]
+name = "stale_key_gap"
+version = "0.1.0"
+edition = "2024"
+
+# Nothing is needed when the program runs: it talks straight to the system's
+# libibverbs C library.
+[dependencies]
+
+# Needed only while building (see build.rs):
+#   bindgen - reads the C header and writes the Rust declarations for us
+#   cc      - compiles the small C helper file that bindgen generates
+[build-dependencies]
+bindgen = { version = "0.73.2", features = ["experimental"] }
+cc = "1.11.2"
